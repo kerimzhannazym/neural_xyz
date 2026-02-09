@@ -1,0 +1,95 @@
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..bd364a1c518c45870bd0bdeb9f5652bd8d88d1ff
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,89 @@
++<!DOCTYPE html>
++<html lang="kk">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1" />
++  <title>XYZ талдауы — Нейрондық желі</title>
++  <link rel="stylesheet" href="styles.css" />
++</head>
++<body>
++  <div class="page">
++    <header class="hero">
++      <div>
++        <p class="eyebrow">Нейрондық желі негізіндегі талдау</p>
++        <h1>XYZ-талдау веб-қосымшасы</h1>
++        <p class="subtitle">
++          Сұраныс тұрақтылығын бағалау үшін деректерді жүктеңіз, нейрондық модельдің
++          болжамымен XYZ санаттарын алыңыз.
++        </p>
++      </div>
++      <div class="hero-card">
++        <h2>Қысқа нұсқаулық</h2>
++        <ol>
++          <li>CSV файлын таңдаңыз (бағандар: product, demand).</li>
++          <li>«Талдауды бастау» батырмасын басыңыз.</li>
++          <li>Нәтижені кестеден және диаграммадан қараңыз.</li>
++        </ol>
++        <button id="load-demo" class="ghost">Демо деректерді жүктеу</button>
++      </div>
++    </header>
++
++    <section class="panel">
++      <div>
++        <h2>Деректерді енгізу</h2>
++        <p class="muted">Әр жолда өнім атауы және сұраныс мәні болуы керек.</p>
++      </div>
++      <div class="controls">
++        <input type="file" id="csv-input" accept=".csv" />
++        <button id="analyze" class="primary">Талдауды бастау</button>
++      </div>
++      <textarea id="csv-preview" placeholder="CSV мазмұны осы жерде көрінеді" rows="6"></textarea>
++    </section>
++
++    <section class="panel grid">
++      <div>
++        <h2>Нейрондық модельдің қорытындысы</h2>
++        <div class="summary" id="summary">
++          <div>
++            <span>Жалпы өнім</span>
++            <strong id="total-items">0</strong>
++          </div>
++          <div>
++            <span>X санаты</span>
++            <strong id="x-count">0</strong>
++          </div>
++          <div>
++            <span>Y санаты</span>
++            <strong id="y-count">0</strong>
++          </div>
++          <div>
++            <span>Z санаты</span>
++            <strong id="z-count">0</strong>
++          </div>
++        </div>
++        <canvas id="chart" width="480" height="260"></canvas>
++      </div>
++      <div>
++        <h2>Талдау нәтижесі</h2>
++        <table>
++          <thead>
++            <tr>
++              <th>Өнім</th>
++              <th>Орташа сұраныс</th>
++              <th>Ауытқу (CV)</th>
++              <th>XYZ санаты</th>
++            </tr>
++          </thead>
++          <tbody id="results"></tbody>
++        </table>
++      </div>
++    </section>
++
++    <footer>
++      <p>Авторлық құқық © 2025 Neural XYZ. Барлық құқықтар қорғалған.</p>
++    </footer>
++  </div>
++
++  <script src="app.js"></script>
++</body>
++</html>
